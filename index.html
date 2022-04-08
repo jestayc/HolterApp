@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewp||t" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div style="margin-top: 10px;">
+        <span style="font-size: 22px;"><img src="C:\Users\infor\Desktop\Programa HP\logo.png" style="width: 20%;"> &nbsp; &nbsp; &nbsp; &nbsp; <strong> Generar Diagnóstico de Holter de Presión</strong></span>
+        
+    </div>
+    
+    <form name="form" method="get">
+        <hr>
+        <div class="row" style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>1.</strong> Valor de carga PA Diurna <strong>Sistólica</strong></label>
+                            <input type="number" name="csd" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>2.</strong> Valor de carga PA Diurna <strong>Diastólica</strong></label>
+                            <input type="number" name="cdd" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>3.</strong> Valor de carga PA Nocturna <strong>Sistólica</strong></label>
+                            <input type="number" name="csn" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>4.</strong> Valor de carga PA Nocturna <strong>Diastólica</strong></label>
+                            <input type="number" name="cdn" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label><strong>5.</strong> Valor Descenso <strong>Sistólica</strong> Nocturno</label>
+                            <input type="number" name="dsn" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label><strong>6.</strong> Valor Descenso <strong>Diastólica</strong> Nocturno</label>
+                            <input type="number" name="ddn" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>7.</strong> Valor Promedio PA Diurna <strong>Sistólica</strong></label>
+                            <input type="number" name="mpds" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>8.</strong> Valor Promedio PA Diurna <strong>Diastólica</strong></label>
+                            <input type="number" name="mpdd" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>9.</strong> Valor Promedio PA Nocturno <strong>Sistólica</strong></label>
+                            <input type="number" name="mpns" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>10.</strong> Valor Promedio PA Nocturna <strong>Diastólica</strong></label>
+                            <input type="number" name="mpnd" class="form-control" required>
+                        </div>
+                        <div class="form-group" style="display: none;">
+                            <label><strong>10.</strong> Valor Promedio PA Nocturna <strong>Diastólica</strong></label>
+                            <input type="number" name="" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: right;">
+                    <button  type="submit" id="boton" value="Enviar" class="btn btn-primary">Procesar</button>
+                    <button class="btn btn-warning"><a href="javascript:location.reload()">Limpiar</a></button>
+                    
+                </div>
+            </div>
+        </div>
+        <hr>
+
+    </form>
+    <div class="row" style="margin-left: 10px; margin-right: 10px; border: 10px;">
+        <div class="col-md-8">
+            <div><p class="texto1"></p></div>
+            <div><p class="texto2"></p></div>
+            <div><p class="texto3"></p></div>
+            <div><p class="texto4"></p></div>
+            <div><p class="texto5"></p></div>
+            <div><p class="texto6"></p></div>
+            <div><p class="texto7"></p></div>
+            <div><p class="texto8"></p></div>
+        </div>
+        <div class="col-md-4">
+            <img src="https://topmedic.cl/wp-content/uploads/2020/05/Holter-Contec-ABPM50-3-Topmedic.png" style="width: 60%;" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+    // Valor de Carga PA Diurna (Sistólica - Diastólica)
+    var csd = null;
+    var cdd = null;
+
+    // Valor de Carga PA Nocturna (Sistólica - Diastólica)
+    var csn = null;
+    var cdn = null;
+
+    // Descenso Nocturno (Sistólica - Diastólica)
+    var dsn = null;
+    var ddn = null;
+
+    // Valor Promedio PA Diurna (Sistólica - Diastólica)
+    var mpds = null;
+    var mpdd = null;
+
+    // Valor Promedio PA Nocturno (Sistólica - Diastólica)
+    var mpns = null;
+    var mpnd = null;
+
+    var status = null;
+
+    text = ""
+    text1 = ""
+    text2 = ""
+    text3 = ""
+    text4 = ""
+    text5 = ""
+    text6 = ""
+    text7 = ""
+
+    $('#boton').click(function(){
+        // Valor de Carga PA Diurna (Sistólica - Diastólica)
+        csd1 = document.getElementsByName("csd")[0].value;
+        cdd1 = document.getElementsByName("cdd")[0].value;
+        // Valor de Carga PA Nocturna (Sistólica - Diastólica)
+        csn1 = document.getElementsByName("csn")[0].value;
+        cdn1 = document.getElementsByName("cdn")[0].value;
+        // Descenso Nocturno (Sistólica - Diastólica)
+        dsn1 = document.getElementsByName("dsn")[0].value;
+        ddn1 = document.getElementsByName("ddn")[0].value;
+        // Descenso Nocturno (Sistólica - Diastólica)
+        mpds1 = document.getElementsByName("mpds")[0].value;
+        mpdd1 = document.getElementsByName("mpdd")[0].value;
+        // Descenso Nocturno (Sistólica - Diastólica)
+        mpns1 = document.getElementsByName("mpns")[0].value;
+        mpnd1 = document.getElementsByName("mpnd")[0].value;
+
+        csd = parseInt(csd1)
+        cdd = parseInt(cdd1)
+        csn = parseInt(csn1)
+        cdn = parseInt(cdn1)
+        dsn = parseInt(dsn1)
+        ddn = parseInt(ddn1)
+        mpds = parseInt(mpds1)
+        mpdd = parseInt(mpdd1)
+        mpns = parseInt(mpns1)
+        mpnd = parseInt(mpnd1)
+
+
+        text = "Durante la monitorización de 24hrs, se presentaron "
+
+        if ((csd == 0) & (cdd == 0 ) & (csn == 0 ) & (cdn == 0)) {
+            text = "Durante la monitorización de 24hrs, no se presentaron cargas Hipertensivas."
+        }    
+
+        // Mínimas Cargas Hipertensivas
+        if ((csd <= 25 & csd > 0) || (cdd <= 25 & cdd > 0) || (csn <= 25 & csn > 0 ) || (cdn <= 25 & cdn > 0)) {
+            text1 = "mínimas cargas hipertensivas"
+            if (csd > cdd & csd > csn & csd > cdn){
+                text2 = ", con predominio sistólico diurno."
+            }
+                
+            if (cdd > csd & cdd > csn & cdd > cdn){
+                text2 = ", con predominio diastólico diurno."
+            }
+                
+            if (csn > csd & csn > cdd & csn > cdn) {
+                text2 = ", con predominio sistólico nocturno."
+            }
+
+            if (cdn > csd & cdn > cdd & cdn > csn) {
+                text2 = ", con predominio diastólico nocturno."
+            }
+            
+            if ((csd == cdd & csd > csn & csd > cdn) & (csd != 0 & cdd != 0)){
+                text2 = ", con predominio diurno."
+            }
+                
+            if ((csn == cdn & csn > csd & csn > cdd) & (csn != 0 & cdn != 0)){
+                text2 = ", con predominio nocturno."
+            }
+                
+            if ((csd == csn & csd > cdd & csd < cdn) & (csd != 0 & csn != 0)){
+                text2 = ", con predominio sistólico."
+            }
+                
+            if ((cdd == cdn & cdd > csd & cdd > csn) & (cdd > csd & cdd > csn) & (cdd != 0 & cdn != 0)){
+                text2 = ", con predominio diastólico."
+            }
+        }
+
+        // leves Cargas Hipertensivas
+        if ((csd <= 50 & csd > 25) || (cdd <= 50 &  cdd > 25) || (csn <= 50 & csn > 25) || (cdn <= 50 & cdn > 25)){
+            text1 = "leves cargas hipertensivas"
+            
+            if (csd > cdd & csd > csn & csd > cdn){
+                text2 = ", con predominio sistólico diurno."
+            }
+                
+            if (cdd > csd & cdd > csn & cdd > cdn){
+                text2 = ", con predominio diastólico diurno."
+            }
+                
+            if (csn > csd & csn > cdd & csn > cdn){
+                text2 = ", con predominio sistólico nocturno."
+            }
+            
+            if (cdn > csd & cdn > cdd & cdn > csn){
+                text2 = ", con predominio diastólico nocturno."
+            }
+            
+            if (csd == cdd & csd > csn & csd > cdn){
+                text2 = ", con predominio diurno."
+            }
+                
+            if (csn == cdn  & csn > csd & csn > cdd){
+                text2 = ", con predominio nocturno."
+            }
+                
+            if (csd == csn & csd > cdd & csd < cdn){
+                text2 = ", con predominio sistólico."
+            }
+                
+            if ((cdd == cdn & cdd > csd & cdd > csn) & (cdd > csd & cdd > csn)){
+                text2 = ", con predominio diastólico."
+            }
+
+        }
+
+        // moderadas Cargas Hipertensivas
+        if ((csd <= 75 & csd > 50) || (cdd <= 75 &  cdd > 50) || (csn <= 75 & csn > 50) || (cdn <= 75 & cdn > 50)){
+            text1 = "moderadas cargas hipertensivas"
+            
+            if (csd > cdd & csd > csn & csd > cdn){
+                text2 = ", con predominio sistólico diurno."
+            }
+                
+            if (cdd > csd & cdd > csn & cdd > cdn){
+                text2 = ", con predominio diastólico diurno."
+            }
+                
+            if (csn > csd & csn > cdd & csn > cdn){
+                text2 = ", con predominio sistólico nocturno."
+            }
+            
+            if (cdn > csd & cdn > cdd & cdn > csn){
+                text2 = ", con predominio diastólico nocturno."
+            }
+            
+            if (csd == cdd & csd > csn & csd > cdn){
+                text2 = ", con predominio diurno."
+            }
+                
+            if (csn == cdn & csn > csd & csn > cdd){
+                text2 = ", con predominio nocturno."
+            }
+                
+            if (csd == csn & csd > cdd & csd < cdn){
+                text2 = ", con predominio sistólico."
+            }
+                
+            if (cdd == cdn & cdd > csd & cdd > csn){
+                text2 = ", con predominio diastólico."
+            }
+
+        }
+
+        //importantes cargas hipertensivas        
+        if ((csd <= 95 & csd > 75) || (cdd <= 95 &  cdd > 75) || (csn <= 95 & csn > 75) || (cdn <= 95 & cdn > 75)){
+            text1 = "importantes cargas hipertensivas"
+            
+            if (csd > cdd & csd > csn & csd > cdn){
+                text2 = ", con predominio sistólico diurno."
+            }
+                
+            if (cdd > csd & cdd > csn & cdd > cdn){
+                text2 = ", con predominio diastólico diurno."
+            }
+                
+            if (csn > csd & csn > cdd & csn > cdn){
+                text2 = ", con predominio sistólico nocturno."
+            }
+            
+            if (cdn > csd & cdn > cdd & cdn > csn){
+                text2 = ", con predominio diastólico nocturno."
+            }
+            
+            if (csd == cdd & csd > csn & csd > cdn){
+                text2 = ", con predominio diurno."
+            }
+                
+            if (csn == cdn & csn > csd & csn > cdd){
+                text2 = ", con predominio nocturno."
+            }
+                
+            if (csd == csn & csd > cdd & csd < cdn){
+                text2 = ", con predominio sistólico."
+            }
+                
+            if (cdd == cdn & cdd > csd & cdd > csn){
+                text2 = ", con predominio diastólico."
+            }
+
+        }
+
+        //severas cargas hipertensivas             
+        if ((csd <= 100 & csd > 95) || (cdd <= 100 &  cdd > 95) || (csn <= 100 & csn > 95) || (cdn <= 100 & cdn > 95)){
+            text1 = "severas cargas hipertensivas"
+            
+            if (csd > cdd & csd > csn & csd > cdn){
+                text2 = ", con predominio sistólico diurno."
+            }
+                
+            if (cdd > csd & cdd > csn & cdd > cdn){
+                text2 = ", con predominio diastólico diurno."
+            }
+                
+            if (csn > csd & csn > cdd & csn > cdn){
+                text2 = ", con predominio sistólico nocturno."
+            }
+            
+            if (cdn > csd & cdn > cdd & cdn > csn){
+                text2 = ", con predominio diastólico nocturno."
+            }
+            
+            if (csd == cdd & csd > csn & csd > cdn){
+                text2 = ", con predominio diurno."
+            }
+                
+            if (csn == cdn & csn > csd & csn > cdd){
+                text2 = ", con predominio nocturno."
+            }
+                
+            if (csd == csn & csd > cdd & csd < cdn){
+                text2 = ", con predominio sistólico."
+            }
+                
+            if (cdd == cdn & cdd > csd & cdd > csn){
+                text2 = ", con predominio diastólico."
+            }
+        }
+
+        if ((cdd == cdn & cdd == csd & cdd == csn) & (cdd <= 25 & cdd > 0)){
+            text1 = "mínimas cargas hipertensivas."
+            text2 = "aaaa"
+        }
+
+        if ((cdd == cdn & cdd == csd & cdd == csn) & (cdd <= 50 & cdd > 25)){
+            text1 = "leves cargas hipertensivas."
+            text2 = ""
+        }
+
+        if ((cdd == cdn & cdd == csd & cdd == csn) & (cdd <= 75 & cdd > 50)){
+            text1 = "moderadas cargas hipertensivas."
+            text2 = ""
+        }
+
+        if ((cdd == cdn & cdd == csd & cdd == csn) & (cdd <= 95 & cdd > 75)){
+            text1 = "importantes cargas hipertensivas."
+            text2 = ""
+        }
+
+        if ((cdd == cdn & cdd == csd & cdd == csn) & (cdd <= 100 & cdd > 95)){
+            text1 = "severas cargas hipertensivas."
+            text2 = ""
+        }
+
+        // Descenso Nocturno
+        if (dsn > 10 & ddn > 10){
+            text3 = "Con descenso nocturno"
+            
+        } else if (dsn > 10 & ddn <= 10){
+            text3 = "Con descenso sistólico nocturno"
+            
+        } else if (dsn <= 10 & ddn > 10){
+            text3 = "Con descenso diastólico nocturno"
+
+        } else if (dsn < 0 & ddn < 0){
+            text3 = "Con dip invertido"
+            
+        } else if (dsn <= 10 & ddn <= 10 & dsn >= 0 & dsn >= 0){
+            text3 = "Sin descenso nocturno"
+            
+        } else if (dsn < 0 & ddn >= 0 & ddn <= 10){
+            text3 = "Con dip sistólico invertido"
+
+        } else if (ddn < 0 & dsn >= 0 & dsn <= 10){
+            text3 = "Con dip diastólico invertido"
+            
+        } else if (dsn > 10 & ddn <= 10){
+            text3 = "Con descenso sistólico nocturno"
+            
+        } else if (dsn < 0 & ddn > 10){
+            text3 = "Con descenso diastólico nocturno"
+            
+        } else if (ddn < 0 & dsn > 10){
+            text3 = "Con dip diastólico invertido"
+
+        } else {
+            text3 = ""
+        }
+
+        // Conclusión
+        // Normal
+        if (mpds < 140 & mpdd < 90 & mpns < 120 & mpnd < 80){
+            text4 = "NORMOTENSIÓN."
+        }
+
+        // SISTÓLICA DIURNA    
+        if (mpds >= 140 & mpds < 160){
+            text4 = "HIPERTENSIÓN ARTERIAL SISTÓLICA DIURNA ETAPA I."
+        } else if (mpds >= 160 & mpds < 180){
+            text4 = "HIPERTENSIÓN ARTERIAL SISTÓLICA DIURNA ETAPA II."
+        } else if (mpds >= 180){
+            text4 = "HIPERTENSIÓN ARTERIAL SISTÓLICA DIURNA ETAPA III."
+        }
+        
+        // DIASTÓLICA DIURNA     
+        if (mpdd >= 90 & mpdd < 100){
+            text5 = "HIPERTENSIÓN ARTERIAL DIASTÓLICA DIURNA ETAPA I."
+        } else if (mpdd >= 100 & mpdd < 110){
+            text5 = "HIPERTENSIÓN ARTERIAL DIASTÓLICA DIURNA ETAPA II."
+        } else if (mpdd >= 110){
+            text5 = "HIPERTENSIÓN ARTERIAL DIASTÓLICA DIURNA ETAPA III."
+        }
+
+        // SISTÓLICA NOCTURNA 
+        if (mpns >= 120 & mpns < 140){
+            text6 = "HIPERTENSIÓN ARTERIAL SISTÓLICA NOCTURNA ETAPA I."
+        } else if (mpns >= 140 & mpns < 160){
+            text6 = "HIPERTENSIÓN ARTERIAL SISTÓLICA NOCTURNA ETAPA II."
+        } else if (mpns >= 160){
+            text6 = "HIPERTENSIÓN ARTERIAL SISTÓLICA NOCTURNA ETAPA III."
+        }
+        
+        // DIASTÓLICA NOCTURNA 
+        if (mpnd >= 80 & mpnd < 90){
+            text7 = "HIPERTENSIÓN ARTERIAL DIASTÓLICA NOCTURNA ETAPA I."
+        } else if (mpnd >= 90 & mpnd < 100){
+            text7 = "HIPERTENSIÓN ARTERIAL DIASTÓLICA NOCTURNA ETAPA II."
+        } else if (mpnd >= 100){
+            text7 = "HIPERTENSIÓN ARTERIAL DIASTÓLICA NOCTURNA ETAPA III."
+        }
+        
+        $('.texto1').html(text+text1+text2);
+        $('.texto2').html("Cargas sistólicas  Diurnas: "+csd+" % y Nocturnas: "+csn+" %");
+        $('.texto3').html("Cargas diastólicas  Dirnas: "+cdd+" % y Nocturnas: "+cdn+" %");
+        $('.texto4').html(text3);
+        $('.texto5').html(text4);
+        $('.texto6').html(text5);
+        $('.texto7').html(text6);
+        $('.texto8').html(text7);
+    });
+ 
+</script>
